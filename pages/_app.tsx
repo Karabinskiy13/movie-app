@@ -1,6 +1,17 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+/* eslint-disable react/prop-types */
+import React from 'react';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+import { AppProps } from 'next/dist/shared/lib/router/router';
+
+import { GlobalStyle } from '../styles/globals';
+import Header from '../src/components/Header/Header';
+
+const MyApp = ({ Component, pageProps }: AppProps) => (
+  <div>
+    <GlobalStyle />
+    <Header />
+    <Component {...pageProps} />
+  </div>
+);
+
+export default MyApp;
