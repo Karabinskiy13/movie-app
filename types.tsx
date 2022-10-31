@@ -10,6 +10,7 @@ export type GenresType = {
   popularity: number;
   vote_count: number;
   vote_average: number;
+  name: string;
 };
 
 export type MoviesType = {

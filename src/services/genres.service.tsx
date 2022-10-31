@@ -2,8 +2,8 @@ import { urls } from '../constants';
 import axiosService from './axios.service';
 import { GenresType } from '../../types';
 
-interface AllGenresResponse {
-  genres: [{ id: number; name: string }];
+export interface AllGenresResponse {
+  genres: { id: number; name: string };
 }
 interface GenresListResponse {
   page: number;
