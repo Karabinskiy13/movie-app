@@ -3,11 +3,11 @@ import React from 'react';
 import { MoviesType } from '../../../types';
 import { urls } from '../../constants';
 
-type Props = {
+export type MovieItemProps = {
   movie: MoviesType;
 };
 
-const MovieByGenre = ({ movie }: Props) => {
+const MovieByGenre = ({ movie }: MovieItemProps) => {
   return (
     <div>
       <Link href={`/movie/${movie.id}`}>

@@ -2,13 +2,13 @@ import { urls } from '../constants';
 import axiosService from './axios.service';
 import { GenresType } from '../../types';
 
-export interface AllGenresResponse {
+type AllGenresResponse = {
   genres: { id: number; name: string };
-}
-interface GenresListResponse {
+};
+type GenresListResponse = {
   page: number;
   results: GenresType[];
-}
+};
 export const genreService = {
   allGenres: () =>
     axiosService.get<AllGenresResponse>(urls.genre.concat(urls.movie, urls.list, urls.key)),

@@ -6,7 +6,7 @@ import Search from '../../../public/images/search.svg';
 import Movie from '../../../public/images/movie.svg';
 import Home from '../../../public/images/home.svg';
 import Favourite from '../../../public/images/favourite.svg';
-import { NavBarStyled, Icons, SearchIcon } from '../../../styles/NavBar';
+import { NavBarStyled, Icons } from '../../../styles/NavBar';
 
 const NavBar = () => {
   return (

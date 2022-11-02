@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { GenresInfoStyle, GenresItemStyle } from '../../../styles/Genres';
 
 type Props = {
   genre: {
@@ -10,13 +11,11 @@ type Props = {
 const GenresItem = ({ genre }: Props) => {
   const { name, id } = genre;
   return (
-    <div>
+    <GenresItemStyle>
       <Link href={`/genres/${id}`}>
-        <div className={'genre'}>
-          <p>{name}</p>
-        </div>
+        <GenresInfoStyle>{name}</GenresInfoStyle>
       </Link>
-    </div>
+    </GenresItemStyle>
   );
 };
 

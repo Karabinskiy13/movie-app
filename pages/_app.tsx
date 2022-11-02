@@ -2,16 +2,15 @@
 import React from 'react';
 
 import { AppProps } from 'next/dist/shared/lib/router/router';
-
+import '../styles/Slider.css';
 import { GlobalStyle } from '../styles/globals';
-import Header from '../src/components/Header/Header';
+import Layout from '../src/components/Layout/Layout';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <div>
+  <Layout>
     <GlobalStyle />
-    <Header />
     <Component {...pageProps} />
-  </div>
+  </Layout>
 );
 
 export default MyApp;

@@ -5,11 +5,11 @@ import { GetServerSideProps } from 'next';
 import { genreService } from '../../src/services/genres.service';
 import { MoviesType } from '../../types';
 
-type Props = {
+type MoviesByGenreProps = {
   moviesByGenre: MoviesType[];
 };
 
-const MoviesByGenre = ({ moviesByGenre }: Props) => {
+const MoviesByGenre = ({ moviesByGenre }: MoviesByGenreProps) => {
   return (
     <div>
       {moviesByGenre && moviesByGenre.map((movie) => <MovieByGenre key={movie.id} movie={movie} />)}

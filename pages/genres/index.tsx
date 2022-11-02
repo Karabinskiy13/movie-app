@@ -1,8 +1,9 @@
 import React from 'react';
 import GenresItem from '../../src/components/Genres/GenresItem';
 import { genreService } from '../../src/services/genres.service';
+import { GenresListStyle, GenresStyle, Heading } from '../../styles/Genres';
 
-type Props = {
+export type GenresProps = {
   genres: [
     {
       name: string;
@@ -11,15 +12,15 @@ type Props = {
   ];
 };
 
-const Genres = ({ genres }: Props) => {
+const Genres = ({ genres }: GenresProps) => {
   return (
     <div>
-      <div className="genres">
-        <div className="allGenres">
-          <h1>Genres</h1>
+      <GenresStyle>
+        <GenresListStyle>
+          <Heading>Genres</Heading>
           {genres && genres.map((genre) => <GenresItem key={genre.id} genre={genre} />)}
-        </div>
-      </div>
+        </GenresListStyle>
+      </GenresStyle>
     </div>
   );
 };
