@@ -28,4 +28,14 @@ export type MoviesType = {
   vote_count: number;
   video: boolean;
   vote_average: number;
+  budget: number;
+  genres: [];
+  tagline: string;
+  revenue: string;
+  status: string;
+};
+
+export type GenresPropsType = {
+  id: number;
+  name: string;
 };

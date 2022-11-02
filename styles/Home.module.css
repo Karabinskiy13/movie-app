@@ -8,12 +8,6 @@ body {
   align-items: center;
 }
 
-.width {
-  width: 93%;
-  height: 150px;
-  background-color: sandybrown;
-}
-
 .slider {
   width: 450px;
   margin-left: 100px;

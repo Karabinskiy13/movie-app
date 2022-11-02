@@ -2,14 +2,10 @@ import React from 'react';
 import GenresItem from '../../src/components/Genres/GenresItem';
 import { genreService } from '../../src/services/genres.service';
 import { GenresListStyle, GenresStyle, Heading } from '../../styles/Genres';
+import { GenresPropsType } from '../../types';
 
 export type GenresProps = {
-  genres: [
-    {
-      name: string;
-      id: number;
-    }
-  ];
+  genres: GenresPropsType[];
 };
 
 const Genres = ({ genres }: GenresProps) => {

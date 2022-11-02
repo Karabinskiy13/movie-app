@@ -10,7 +10,7 @@ export const NavBarStyled = styled.div`
   gap: 50px;
   align-items: center;
   width: 50px;
-  height: 720px;
+  height: 675px;
 `;
 
 export const Icons = styled.div`

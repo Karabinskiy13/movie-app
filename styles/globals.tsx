@@ -18,15 +18,13 @@ a {
 display: flex;
 }
 
-.width {
+width {
   width: 93%;
   height: 150px;
   background-color: sandybrown;
 }
-
-.slider {
+slider {
   width: 450px;
   margin-left: 100px;
-  
-
-}`;
+}
+`;
