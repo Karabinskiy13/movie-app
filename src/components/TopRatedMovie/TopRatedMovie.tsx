@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { AboutMovie, Details, MovieStyle, OverView, Poster, Title } from '../../../styles/Movie';
 import { MoviesType } from '../../../types';
 
 import { urls } from '../../constants';
@@ -9,23 +10,22 @@ type TopMovieProps = {
 };
 
 const TopRatedMovie = ({ topMovie }: TopMovieProps) => {
-  const { backdrop_path, poster_path, release_date, id, overview } = topMovie;
+  const { backdrop_path, poster_path, release_date, id, overview, title } = topMovie;
   return (
     <div>
       <Link href={`/movie/${id}`} style={{ textDecoration: 'none' }}>
-        <div
-          style={{ backgroundImage: `url(${urls.img1280.concat(backdrop_path)})` }}
-          className="movieInformation">
-          <div className="aboutMovie">
-            <div className="poster">
-              <img src={urls.img342.concat(poster_path)} alt="Poster" />
-            </div>
-            <div className="details">
-              <div>{overview}</div>
+        <MovieStyle style={{ backgroundImage: `url(${urls.img1280.concat(backdrop_path)})` }}>
+          <AboutMovie>
+            <Poster>
+              <img src={urls.img342.concat(poster_path)} />
+            </Poster>
+            <Details>
+              <Title>{title}</Title>
               <h1 className={'releaseDate'}>({release_date && release_date.substring(0, 4)})</h1>
-            </div>
-          </div>
-        </div>
+              <OverView>{overview}</OverView>
+            </Details>
+          </AboutMovie>
+        </MovieStyle>
       </Link>
     </div>
   );

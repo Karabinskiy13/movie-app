@@ -1,12 +1,22 @@
-/* eslint-disable react/jsx-key */
 import React from 'react';
+import { GetServerSideProps } from 'next';
+import StarRatings from 'react-star-ratings';
 
 import { urls } from '../../src/constants';
-import StarRatings from 'react-star-ratings';
-import { GetServerSideProps } from 'next';
 import { moviesService } from '../../src/services/movies.service';
-import { GenresPropsType, MoviesType } from '../../types';
-import GenresItem from '../../src/components/Genres/GenresItem';
+import { MoviesType } from '../../types';
+
+import {
+  AboutMovie,
+  Details,
+  Money,
+  MovieStyle,
+  Poster,
+  ReleaseData,
+  StarsStyle,
+  TitleBadge,
+  TitleBadgeHeader
+} from '../../styles/Movie';
 
 type SingleMovieProps = {
   singleMovie: MoviesType;
@@ -18,37 +28,28 @@ const GetMovies = ({ singleMovie }: SingleMovieProps) => {
     title,
     release_date,
     overview,
-
     vote_average,
     budget,
     revenue,
     vote_count,
     tagline,
     status,
-    genres,
     backdrop_path
   } = singleMovie;
 
-  console.log(singleMovie);
   return (
-    <div
-      style={{ backgroundImage: `url(${urls.img1280.concat(backdrop_path)})` }}
-      className="movieInformation">
-      <div className="aboutMovie">
-        <div className="poster">
-          <img src={urls.img342.concat(poster_path)} alt="Poster" />
-          {/* <div className="posterGenres">
-            {genres &&
-              genres.map(({ genre }: { genre: GenresPropsType }) => <GenresItem genre={genre} />)}
-          </div> */}
-        </div>
-        <div className="details">
-          <div className="titleBadge">
-            <h1>{title}</h1>
-          </div>
-          <h1 className={'releaseDate'}>({release_date && release_date.substring(0, 4)})</h1>
-          <h3 className={'tagline'}>{tagline}</h3>
-          <div className="stars">
+    <MovieStyle style={{ backgroundImage: `url(${urls.img1280.concat(backdrop_path)})` }}>
+      <AboutMovie>
+        <Poster>
+          <img src={urls.img342.concat(poster_path)} />
+        </Poster>
+        <Details>
+          <TitleBadge>
+            <TitleBadgeHeader>{title}</TitleBadgeHeader>
+          </TitleBadge>
+          <ReleaseData>({release_date && release_date.substring(0, 4)})</ReleaseData>
+          <h3>{tagline}</h3>
+          <StarsStyle>
             <StarRatings
               rating={vote_average}
               starDimension="20px"
@@ -58,18 +59,18 @@ const GetMovies = ({ singleMovie }: SingleMovieProps) => {
               name="rating"
             />
             <p>({vote_count})</p>
-          </div>
+          </StarsStyle>
           <h3>{overview}</h3>
           {budget > 1 && (
-            <div className="money">
+            <Money>
               <h4>Status: {status}</h4>
               <h4>Budget: {budget} $</h4>
               <h4>Revenue: {revenue} $</h4>
-            </div>
+            </Money>
           )}
-        </div>
-      </div>
-    </div>
+        </Details>
+      </AboutMovie>
+    </MovieStyle>
   );
 };
 export const getServerSideProps: GetServerSideProps = async (context) => {

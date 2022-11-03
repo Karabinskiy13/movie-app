@@ -1,6 +1,8 @@
 import React from 'react';
+
 import GenresItem from '../../src/components/Genres/GenresItem';
 import { genreService } from '../../src/services/genres.service';
+
 import { GenresListStyle, GenresStyle, Heading } from '../../styles/Genres';
 import { GenresPropsType } from '../../types';
 
@@ -25,8 +27,6 @@ export const getStaticProps = async () => {
   try {
     const result = await genreService.allGenres();
     const data = result.data.genres;
-    console.log(data);
-
     return {
       props: {
         genres: data

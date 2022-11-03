@@ -3,11 +3,11 @@ import React, { FC, ReactNode } from 'react';
 
 import Header from '../Header/Header';
 
-type Props = {
+type LayoutProps = {
   children: ReactNode;
 };
 
-const Layout: FC<Props> = ({ children }) => (
+const Layout: FC<LayoutProps> = ({ children }) => (
   <>
     <Header />
     {children}

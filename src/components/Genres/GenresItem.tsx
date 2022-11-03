@@ -1,14 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import { GenresInfoStyle, GenresItemStyle } from '../../../styles/Genres';
 
-type Props = {
-  genre: {
-    name: string;
-    id: number;
-  };
+import { GenresInfoStyle, GenresItemStyle } from '../../../styles/Genres';
+import { GenresPropsType } from '../../../types';
+
+type GenreProps = {
+  genre: GenresPropsType;
 };
-const GenresItem = ({ genre }: Props) => {
+const GenresItem = ({ genre }: GenreProps) => {
   const { name, id } = genre;
   return (
     <GenresItemStyle>

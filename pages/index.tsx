@@ -4,12 +4,12 @@ import Slider from 'react-slick';
 import ScrollRight from '../public/images/scrollRight.svg';
 
 import { Slide } from '../src/components/Slide/SlideItem';
+import { moviesService } from '../src/services/movies.service';
+import { MoviesType } from '../types';
 
+import { CarouselStyled } from '../styles/Slider';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { moviesService } from '../src/services/movies.service';
-import { CarouselStyled } from '../styles/Slider';
-import { MoviesType } from '../types';
 
 type SliderProps = {
   nowPlayMovies: MoviesType[];
@@ -40,7 +40,7 @@ const HomeSlider = ({ nowPlayMovies }: SliderProps) => {
     <CarouselStyled className="carousel">
       <Slider {...settings}>
         {nowPlayMovies &&
-          nowPlayMovies.slice(9, 13).map((movie: any) => <Slide key={movie.id} movie={movie} />)}
+          nowPlayMovies.slice(9, 13).map((movie) => <Slide key={movie.id} movie={movie} />)}
       </Slider>
     </CarouselStyled>
   );

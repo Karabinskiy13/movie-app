@@ -21,7 +21,6 @@ export const getStaticProps = async () => {
   try {
     const result = await moviesService.getTopRatedMovies();
     const data = result.data.results;
-    console.log(data);
 
     return {
       props: {

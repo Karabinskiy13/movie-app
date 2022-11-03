@@ -1,35 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import SearchButton from '../../images/search.svg';
-import MoviesList from '../../src/components/MoviesList/MoviesList';
+import TopRatedMovie from '../../src/components/TopRatedMovie/TopRatedMovie';
+import { moviesService } from '../../src/services/movies.service';
+
 import { MoviesType } from '../../types';
+import { SearchStyle } from '../../styles/Search';
 
-type SearchProps = {
-  searchMovies: {
-    results: MoviesType;
-  };
-};
-
-export const Search = ({ searchMovies }: SearchProps) => {
-  const { results } = searchMovies;
-
+const Search = () => {
+  let timeout: NodeJS.Timeout;
   const [searchTerm, setSearchTerm] = React.useState('');
-  const [searchResults, setSearchResults] = React.useState([]);
-  const handleChange = (e: { target: { value: React.SetStateAction<string> } }) => {
+  const [searchMovie, setSearchMovie] = React.useState<MoviesType[]>([]);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
   React.useEffect(() => {
-    const results = people.filter((person) => person.toLowerCase().includes(searchTerm));
-    setSearchResults(results);
+    const fetch = async () => {
+      const movies = await moviesService.searchMovie(`${searchTerm}`);
+      if (movies) {
+        setSearchMovie(movies.results);
+      }
+    };
+    timeout = setTimeout(() => fetch(), 500);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, [searchTerm]);
   return (
-    <div className="App">
-      <input type="text" placeholder="Search" value={searchTerm} onChange={handleChange} />
-      <ul>
-        {searchResults.map((item) => (
-          <li>{item}</li>
-        ))}
-      </ul>
+    <div>
+      <SearchStyle type="text" placeholder="Search" value={searchTerm} onChange={handleChange} />
+      {searchMovie && searchMovie.map((movie) => <TopRatedMovie key={movie.id} topMovie={movie} />)}
     </div>
   );
 };
+
+export default Search;
