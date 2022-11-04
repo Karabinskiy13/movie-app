@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import React from 'react';
 import { AboutMovie, Details, MovieStyle, OverView, Poster, Title } from '../../../styles/Movie';
-import { MoviesType } from '../../../types';
+import { Movie } from '../../../types';
 
 import { urls } from '../../constants';
 
-type TopMovieProps = {
-  topMovie: MoviesType;
+type TopMovie = {
+  topMovie: Movie;
 };
 
-const TopRatedMovie = ({ topMovie }: TopMovieProps) => {
+const TopRatedMovie = ({ topMovie }: TopMovie) => {
   const { backdrop_path, poster_path, release_date, id, overview, title } = topMovie;
   return (
     <div>

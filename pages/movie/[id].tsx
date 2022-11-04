@@ -4,7 +4,7 @@ import StarRatings from 'react-star-ratings';
 
 import { urls } from '../../src/constants';
 import { moviesService } from '../../src/services/movies.service';
-import { MoviesType } from '../../types';
+import { Movie } from '../../types';
 
 import {
   AboutMovie,
@@ -17,12 +17,16 @@ import {
   TitleBadge,
   TitleBadgeHeader
 } from '../../styles/Movie';
+import { ParsedUrlQuery } from 'querystring';
 
-type SingleMovieProps = {
-  singleMovie: MoviesType;
+type SingleMovie = {
+  singleMovie: Movie;
 };
+interface Params extends ParsedUrlQuery {
+  id: string;
+}
 
-const GetMovies = ({ singleMovie }: SingleMovieProps) => {
+const GetMovies = ({ singleMovie }: SingleMovie) => {
   const {
     poster_path,
     title,
@@ -74,7 +78,7 @@ const GetMovies = ({ singleMovie }: SingleMovieProps) => {
   );
 };
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { id }: any = context.params;
+  const { id } = context.params as Params;
 
   const result = await moviesService.getMovie(id);
   const data = result.data;

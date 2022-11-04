@@ -1,15 +1,15 @@
-import { MoviesType } from '../../types';
+import { Movie } from '../../types';
 import { urls } from '../constants';
 import axiosService from './axios.service';
 
 type GetMovieResponse = {
   id?: number;
   page: number;
-  results: MoviesType[];
+  results: Movie[];
 };
 
 export const moviesService = {
-  getMovie: (id: number) => axiosService.get<GetMovieResponse>(`${urls.movie}/${id}${urls.key}`),
+  getMovie: (id: string) => axiosService.get<GetMovieResponse>(`${urls.movie}/${id}${urls.key}`),
   getPopularMovies: () =>
     axiosService.get<GetMovieResponse>(urls.movie.concat(urls.popular, urls.key)),
   getMoviesPlayingNow: () =>

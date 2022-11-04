@@ -4,13 +4,13 @@ import GenresItem from '../../src/components/Genres/GenresItem';
 import { genreService } from '../../src/services/genres.service';
 
 import { GenresListStyle, GenresStyle, Heading } from '../../styles/Genres';
-import { GenresPropsType } from '../../types';
+import { Genre } from '../../types';
 
-export type GenresProps = {
-  genres: GenresPropsType[];
+export type Genres = {
+  genres: Genre[];
 };
 
-const Genres = ({ genres }: GenresProps) => {
+const Genres = ({ genres }: Genres) => {
   return (
     <div>
       <GenresStyle>

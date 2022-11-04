@@ -1,13 +1,13 @@
 import { urls } from '../constants';
 import axiosService from './axios.service';
-import { GenresType } from '../../types';
+import { Genre } from '../../types';
 
 type AllGenresResponse = {
   genres: { id: number; name: string };
 };
 type GenresListResponse = {
   page: number;
-  results: GenresType[];
+  results: Genre[];
 };
 export const genreService = {
   allGenres: () =>

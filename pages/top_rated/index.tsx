@@ -2,10 +2,10 @@ import React from 'react';
 
 import TopRatedMovie from '../../src/components/TopRatedMovie/TopRatedMovie';
 import { moviesService } from '../../src/services/movies.service';
-import { MoviesType } from '../../types';
+import { Movie } from '../../types';
 
 type TopMovieProps = {
-  topMovie: MoviesType[];
+  topMovie: Movie[];
 };
 
 const TopRated = ({ topMovie }: TopMovieProps) => {

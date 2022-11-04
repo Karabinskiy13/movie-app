@@ -22,6 +22,7 @@ export const Icons = styled.div`
     transition: transform 0.15s linear;
   }
 `;
+
 export const SearchIcon = styled.div`
   width: 45px;
   height: 45px;

@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
 import { AboutMovie, Details, MovieStyle, OverView, Poster, Title } from '../../../styles/Movie';
-import { MoviesType } from '../../../types';
+import { Movie } from '../../../types';
 import { urls } from '../../constants';
 
-export type MovieItemProps = {
-  movie: MoviesType;
+export type MovieItem = {
+  movie: Movie;
 };
 
-const MovieByGenre = ({ movie }: MovieItemProps) => {
+const MovieByGenre = ({ movie }: MovieItem) => {
   return (
     <Link href={`/movie/${movie.id}`}>
       <MovieStyle style={{ backgroundImage: `url(${urls.img1280.concat(movie.backdrop_path)})` }}>

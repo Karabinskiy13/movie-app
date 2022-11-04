@@ -19,15 +19,18 @@ export const CarouselStyled = styled.div`
     width: 185px;
   }
 `;
+
 export const CarouselSlide = styled.div`
   display: flex;
   align-items: center;
   height: 720px;
 `;
+
 export const CarouselInfo = styled.div`
   margin-left: 80px;
   max-width: 650px;
 `;
+
 export const CarouselHeader = styled.h1`
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -36,6 +39,7 @@ export const CarouselHeader = styled.h1`
   line-height: 64px;
   color: #ffffff;
 `;
+
 export const CarouselText = styled.p`
   max-width: 620px;
   font-family: Roboto, sans-serif;
@@ -45,6 +49,7 @@ export const CarouselText = styled.p`
   line-height: 32px;
   color: #ffffff;
 `;
+
 export const CarouselButton = styled.button`
   font-family: Roboto, sans-serif;
   font-style: normal;

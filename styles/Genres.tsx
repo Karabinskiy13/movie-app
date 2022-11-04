@@ -9,6 +9,7 @@ export const GenresStyle = styled.div`
   align-content: center;
   align-items: center;
 `;
+
 export const Heading = styled.h1`
   margin-top: 100px;
   font-family: 'Bebas Neue', cursive;

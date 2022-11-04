@@ -5,23 +5,23 @@ import ScrollRight from '../public/images/scrollRight.svg';
 
 import { Slide } from '../src/components/Slide/SlideItem';
 import { moviesService } from '../src/services/movies.service';
-import { MoviesType } from '../types';
+import { Movie } from '../types';
 
 import { CarouselStyled } from '../styles/Slider';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-type SliderProps = {
-  nowPlayMovies: MoviesType[];
+type SliderType = {
+  nowPlayingMovies: Movie[];
 };
-type ArrowProps = {
+type Arrow = {
   className?: string;
   style?: string;
   onClick?: () => void;
 };
 
-const HomeSlider = ({ nowPlayMovies }: SliderProps) => {
-  const SampleNextArrow = ({ className, style, onClick }: ArrowProps) => {
+const HomeSlider = ({ nowPlayingMovies }: SliderType) => {
+  const SampleNextArrow = ({ className, style, onClick }: Arrow) => {
     return <ScrollRight className={className} style={style} onClick={onClick} alt="scroll Right" />;
   };
 
@@ -39,8 +39,8 @@ const HomeSlider = ({ nowPlayMovies }: SliderProps) => {
   return (
     <CarouselStyled className="carousel">
       <Slider {...settings}>
-        {nowPlayMovies &&
-          nowPlayMovies.slice(9, 13).map((movie) => <Slide key={movie.id} movie={movie} />)}
+        {nowPlayingMovies &&
+          nowPlayingMovies.slice(9, 13).map((movie) => <Slide key={movie.id} movie={movie} />)}
       </Slider>
     </CarouselStyled>
   );
@@ -53,7 +53,7 @@ export const getStaticProps = async () => {
 
     return {
       props: {
-        nowPlayMovies: data
+        nowPlayingMovies: data
       }
     };
   } catch (error) {

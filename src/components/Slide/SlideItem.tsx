@@ -3,7 +3,7 @@ import Link from 'next/link';
 import StarRatings from 'react-star-ratings';
 
 import { urls } from '../../constants';
-import { MovieItemProps } from '../Genres/MovieByGenre';
+import { MovieItem } from '../Genres/MovieByGenre';
 import {
   CarouselButton,
   CarouselHeader,
@@ -12,7 +12,7 @@ import {
   CarouselText
 } from '../../../styles/Slider';
 
-export const Slide = ({ movie }: MovieItemProps) => {
+export const Slide = ({ movie }: MovieItem) => {
   const { original_title, overview, id, vote_average, backdrop_path } = movie;
 
   return (

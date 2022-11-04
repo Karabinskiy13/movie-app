@@ -1,4 +1,4 @@
-export type GenresType = {
+export type Genre = {
   adult: boolean;
   overview: string;
   release_date: string;
@@ -13,7 +13,7 @@ export type GenresType = {
   name: string;
 };
 
-export type MoviesType = {
+export type Movie = {
   poster_path: string;
   adult: boolean;
   overview: string;
@@ -35,7 +35,7 @@ export type MoviesType = {
   status: string;
 };
 
-export type GenresPropsType = {
+export type GenreType = {
   id: number;
   name: string;
 };

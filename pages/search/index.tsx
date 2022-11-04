@@ -3,13 +3,13 @@ import React from 'react';
 import TopRatedMovie from '../../src/components/TopRatedMovie/TopRatedMovie';
 import { moviesService } from '../../src/services/movies.service';
 
-import { MoviesType } from '../../types';
+import { Movie } from '../../types';
 import { SearchStyle } from '../../styles/Search';
 
 const Search = () => {
   let timeout: NodeJS.Timeout;
   const [searchTerm, setSearchTerm] = React.useState('');
-  const [searchMovie, setSearchMovie] = React.useState<MoviesType[]>([]);
+  const [searchMovie, setSearchMovie] = React.useState<Movie[]>([]);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };

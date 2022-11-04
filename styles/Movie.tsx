@@ -41,16 +41,19 @@ export const OverView = styled.div`
   font-family: Roboto, sans-serif;
   color: #ffffff;
 `;
+
 export const Title = styled.h1`
   font-family: Roboto, sans-serif;
   color: #ffffff;
   font-size: 30px;
 `;
+
 export const TitleBadge = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
+
 export const TitleBadgeHeader = styled.h1`
   margin-bottom: 10px;
   font-family: 'Bebas Neue', cursive;
@@ -60,14 +63,17 @@ export const TitleBadgeHeader = styled.h1`
   line-height: 50px;
   color: white;
 `;
+
 export const ReleaseData = styled.h1`
   margin-top: 10px;
 `;
+
 export const StarsStyle = styled.div`
   display: flex;
   gap: 15px;
   align-items: center;
 `;
+
 export const Money = styled.div`
   display: flex;
   flex-wrap: wrap;
