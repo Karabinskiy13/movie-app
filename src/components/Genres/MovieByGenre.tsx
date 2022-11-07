@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-condition */
 import Link from 'next/link';
 import React from 'react';
 import { AboutMovie, Details, MovieStyle, OverView, Poster, Title } from '../../../styles/Movie';
@@ -9,9 +10,12 @@ export type MovieItem = {
 };
 
 const MovieByGenre = ({ movie }: MovieItem) => {
+  const background = movie.backdrop_path
+    ? `url(${urls.img1280.concat(movie.backdrop_path)})`
+    : 'none';
   return (
     <Link href={`/movie/${movie.id}`}>
-      <MovieStyle style={{ backgroundImage: `url(${urls.img1280.concat(movie.backdrop_path)})` }}>
+      <MovieStyle style={{ backgroundImage: background }}>
         <AboutMovie>
           <Poster>
             <img src={urls.img342.concat(movie.poster_path)} />

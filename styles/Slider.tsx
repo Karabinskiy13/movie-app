@@ -3,10 +3,18 @@ import styled from 'styled-components';
 export const CarouselStyled = styled.div`
   width: 1280px;
   height: 760px;
+  @media (max-width: 768px) {
+    width: 360px;
+    margin-left: -28px;
+  }
+
   .slick-list {
     width: 1280px;
     height: 720px;
     margin-right: -30px;
+    @media (max-width: 768px) {
+      width: 390px;
+    }
   }
 
   .slick-track {
@@ -17,18 +25,33 @@ export const CarouselStyled = styled.div`
     right: -25px;
     height: 461px;
     width: 185px;
+    @media (max-width: 768px) {
+      opacity: 0;
+    }
   }
 `;
 
 export const CarouselSlide = styled.div`
   display: flex;
   align-items: center;
+  width: 1280px;
   height: 720px;
+  @media (max-width: 768px) {
+    max-height: 800px;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 `;
 
 export const CarouselInfo = styled.div`
-  margin-left: 80px;
   max-width: 650px;
+  @media (max-width: 768px) {
+    padding-left: 75px;
+  }
+  @media (max-width: 320px) {
+    padding-left: 120px;
+  }
 `;
 
 export const CarouselHeader = styled.h1`
@@ -36,6 +59,7 @@ export const CarouselHeader = styled.h1`
   font-style: normal;
   font-weight: 500;
   font-size: 56px;
+  text-shadow: black 0 0px 10px;
   line-height: 64px;
   color: #ffffff;
 `;
@@ -48,6 +72,9 @@ export const CarouselText = styled.p`
   font-size: 16px;
   line-height: 32px;
   color: #ffffff;
+  @media (max-width: 768px) {
+    margin-left: -40px;
+  }
 `;
 
 export const CarouselButton = styled.button`
@@ -64,4 +91,7 @@ export const CarouselButton = styled.button`
   background: rgba(44, 44, 44, 0.3);
   box-shadow: 0px 16px 16px 4px rgba(0, 0, 0, 0.12);
   border-radius: 40px;
+  @media (max-width: 768px) {
+    margin-left: -28px;
+  }
 `;

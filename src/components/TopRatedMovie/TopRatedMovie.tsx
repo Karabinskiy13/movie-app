@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-condition */
 import Link from 'next/link';
 import React from 'react';
 import { AboutMovie, Details, MovieStyle, OverView, Poster, Title } from '../../../styles/Movie';
@@ -10,11 +11,17 @@ type TopMovie = {
 };
 
 const TopRatedMovie = ({ topMovie }: TopMovie) => {
-  const { backdrop_path, poster_path, release_date, id, overview, title } = topMovie;
+  const { poster_path, release_date, id, overview, title } = topMovie;
+
   return (
     <div>
       <Link href={`/movie/${id}`} style={{ textDecoration: 'none' }}>
-        <MovieStyle style={{ backgroundImage: `url(${urls.img1280.concat(backdrop_path)})` }}>
+        <MovieStyle
+          style={{
+            backgroundImage: topMovie.backdrop_path
+              ? `url(${urls.img1280.concat(topMovie.backdrop_path)})`
+              : 'url(https://images.hdqwalls.com/download/dark-abstract-black-minimal-4k-q0-1280x800.jpg)'
+          }}>
           <AboutMovie>
             <Poster>
               <img src={urls.img342.concat(poster_path)} />

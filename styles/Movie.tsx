@@ -11,6 +11,10 @@ export const MovieStyle = styled.div`
     font-family: Roboto, sans-serif;
     color: #ffffff;
   }
+  @media (max-width: 768px) {
+    max-width: 370px;
+    background-image: none !important;
+  }
 `;
 
 export const AboutMovie = styled.div`
@@ -18,6 +22,15 @@ export const AboutMovie = styled.div`
   margin: 50px;
   font-family: Roboto, sans-serif;
   color: #ffffff;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 30px;
+  }
+  @media (max-width: 320px) {
+    padding-left: 70px;
+  }
 `;
 
 export const Poster = styled.div`
@@ -25,6 +38,9 @@ export const Poster = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 768px) {
+    margin-right: 15px;
+  }
 `;
 
 export const Details = styled.div`
@@ -35,17 +51,32 @@ export const Details = styled.div`
   padding: 25px;
   font-family: Roboto, sans-serif;
   color: #ffffff;
+  @media (max-width: 768px) {
+    padding: 0;
+    margin: 0;
+    margin-top: -30px;
+    text-align: end;
+    background: none;
+  }
 `;
 
 export const OverView = styled.div`
   font-family: Roboto, sans-serif;
   color: #ffffff;
+  font-size: 25px;
+  @media (max-width: 768px) {
+    font-size: 15px;
+    min-width: 160px;
+  }
 `;
 
 export const Title = styled.h1`
   font-family: Roboto, sans-serif;
   color: #ffffff;
-  font-size: 30px;
+  font-size: 80px;
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
 `;
 
 export const TitleBadge = styled.div`

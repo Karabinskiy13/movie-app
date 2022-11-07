@@ -22,7 +22,15 @@ type Arrow = {
 
 const HomeSlider = ({ nowPlayingMovies }: SliderType) => {
   const SampleNextArrow = ({ className, style, onClick }: Arrow) => {
-    return <ScrollRight className={className} style={style} onClick={onClick} alt="scroll Right" />;
+    return (
+      <ScrollRight
+        hidden
+        className={className}
+        style={style}
+        onClick={onClick}
+        alt="scroll Right"
+      />
+    );
   };
 
   const settings = {

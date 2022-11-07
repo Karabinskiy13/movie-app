@@ -5,8 +5,10 @@ export const SearchStyle = styled.input`
   height: 40px;
   margin-left: 300px;
   margin: 50px auto;
-  background: #444;
-  background: rgba(0, 0, 0, 0.2);
+  background: #ffffff
   border-radius: 3px;
   border: 1px solid #fff;
+  @media (max-width: 768px) {
+    max-width: 360px
+  }
 `;

@@ -8,19 +8,25 @@ export const NavBarStyled = styled.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
+  position: fixed;
+  left: 270px;
   align-items: center;
   width: 50px;
-  height: 675px;
+  height: 700px;
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 250px;
+    left: 0;
+    background: 0;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
 `;
 
 export const Icons = styled.div`
   margin: 20px;
   width: 30px;
   height: 30px;
-  hover {
-    transform: scale(1.2);
-    transition: transform 0.15s linear;
-  }
 `;
 
 export const SearchIcon = styled.div`
