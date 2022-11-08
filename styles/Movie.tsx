@@ -75,7 +75,7 @@ export const Title = styled.h1`
   color: #ffffff;
   font-size: 80px;
   @media (max-width: 768px) {
-    font-size: 40px;
+    font-size: 28px;
   }
 `;
 

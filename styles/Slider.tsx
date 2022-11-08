@@ -4,8 +4,7 @@ export const CarouselStyled = styled.div`
   width: 1280px;
   height: 760px;
   @media (max-width: 768px) {
-    width: 360px;
-    margin-left: -28px;
+    width: 100%;
   }
 
   .slick-list {
@@ -13,7 +12,7 @@ export const CarouselStyled = styled.div`
     height: 720px;
     margin-right: -30px;
     @media (max-width: 768px) {
-      width: 390px;
+      width: 350px;
     }
   }
 
@@ -47,7 +46,7 @@ export const CarouselSlide = styled.div`
 export const CarouselInfo = styled.div`
   max-width: 650px;
   @media (max-width: 768px) {
-    padding-left: 75px;
+    padding-left: 50px;
   }
   @media (max-width: 320px) {
     padding-left: 120px;

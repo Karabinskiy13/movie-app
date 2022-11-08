@@ -1,6 +1,16 @@
 /* eslint-disable no-undef */
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'image.tmdb.org',
+        port: '',
+        pathname: '/t/p/**'
+      }
+    ]
+  },
   experimental: { appDir: true },
   webpack(config) {
     config.module.rules.push({

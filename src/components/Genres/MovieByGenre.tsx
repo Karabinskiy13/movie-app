@@ -1,6 +1,7 @@
 /* eslint-disable no-constant-condition */
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 import { AboutMovie, Details, MovieStyle, OverView, Poster, Title } from '../../../styles/Movie';
 import { Movie } from '../../../types';
 import { urls } from '../../constants';
@@ -18,7 +19,12 @@ const MovieByGenre = ({ movie }: MovieItem) => {
       <MovieStyle style={{ backgroundImage: background }}>
         <AboutMovie>
           <Poster>
-            <img src={urls.img342.concat(movie.poster_path)} />
+            <Image
+              src={urls.img342.concat(movie.poster_path)}
+              alt={'poster'}
+              width={342}
+              height={513}
+            />
           </Poster>
           <Details>
             <Title>{movie.title}</Title>

@@ -9,13 +9,14 @@ export const NavBarStyled = styled.div`
   flex-direction: column;
   gap: 50px;
   position: fixed;
-  left: 270px;
+  left: 0;
   align-items: center;
   width: 50px;
   height: 700px;
   @media (max-width: 768px) {
+    margin-left: -5px;
+    min-width: 40px;
     position: fixed;
-    top: 250px;
     left: 0;
     background: 0;
     backdrop-filter: none;

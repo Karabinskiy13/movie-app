@@ -1,4 +1,5 @@
 /* eslint-disable no-constant-condition */
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { AboutMovie, Details, MovieStyle, OverView, Poster, Title } from '../../../styles/Movie';
@@ -24,7 +25,12 @@ const TopRatedMovie = ({ topMovie }: TopMovie) => {
           }}>
           <AboutMovie>
             <Poster>
-              <img src={urls.img342.concat(poster_path)} />
+              <Image
+                src={urls.img342.concat(poster_path)}
+                alt={'poster'}
+                width={342}
+                height={513}
+              />
             </Poster>
             <Details>
               <Title>{title}</Title>

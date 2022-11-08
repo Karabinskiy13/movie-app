@@ -16,7 +16,12 @@ export const Slide = ({ movie }: MovieItem) => {
   const { original_title, overview, id, vote_average, backdrop_path } = movie;
 
   return (
-    <CarouselSlide style={{ backgroundImage: `url(${urls.img1280.concat(backdrop_path)})` }}>
+    <CarouselSlide
+      style={{
+        backgroundImage: backdrop_path
+          ? `url(${urls.img1280.concat(backdrop_path)})`
+          : 'url(https://images.hdqwalls.com/download/dark-abstract-black-minimal-4k-q0-1280x800.jpg)'
+      }}>
       <CarouselInfo>
         <CarouselHeader>{original_title}</CarouselHeader>
         <div className="rating">
