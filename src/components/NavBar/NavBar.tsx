@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import Search from '../../../public/images/search.svg';
-import Movie from '../../../public/images/movie.svg';
+import Movie from '../../../public/images/Movie.svg';
 import Home from '../../../public/images/home.svg';
 import Favourite from '../../../public/images/favourite.svg';
 import { NavBarStyled, Icons } from '../../../styles/NavBar';
