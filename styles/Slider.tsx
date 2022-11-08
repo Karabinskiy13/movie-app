@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const CarouselStyled = styled.div`
   width: 1280px;
   height: 760px;
+
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -11,6 +12,7 @@ export const CarouselStyled = styled.div`
     width: 1280px;
     height: 720px;
     margin-right: -30px;
+
     @media (max-width: 768px) {
       width: 350px;
     }
@@ -24,6 +26,7 @@ export const CarouselStyled = styled.div`
     right: -25px;
     height: 461px;
     width: 185px;
+
     @media (max-width: 768px) {
       opacity: 0;
     }
@@ -35,6 +38,7 @@ export const CarouselSlide = styled.div`
   align-items: center;
   width: 1280px;
   height: 720px;
+
   @media (max-width: 768px) {
     max-height: 800px;
     width: 100%;
@@ -45,9 +49,11 @@ export const CarouselSlide = styled.div`
 
 export const CarouselInfo = styled.div`
   max-width: 650px;
+
   @media (max-width: 768px) {
     padding-left: 50px;
   }
+
   @media (max-width: 320px) {
     padding-left: 120px;
   }
@@ -71,6 +77,7 @@ export const CarouselText = styled.p`
   font-size: 16px;
   line-height: 32px;
   color: #ffffff;
+
   @media (max-width: 768px) {
     margin-left: -40px;
   }
@@ -90,6 +97,7 @@ export const CarouselButton = styled.button`
   background: rgba(44, 44, 44, 0.3);
   box-shadow: 0px 16px 16px 4px rgba(0, 0, 0, 0.12);
   border-radius: 40px;
+
   @media (max-width: 768px) {
     margin-left: -28px;
   }

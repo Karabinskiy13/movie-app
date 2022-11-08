@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MovieStyle = styled.div`
   width: 1280px;
-  height: 775px;
+  max-height: 775px;
   p,
   h1,
   h3,
@@ -12,7 +12,9 @@ export const MovieStyle = styled.div`
     color: #ffffff;
   }
   @media (max-width: 768px) {
+    padding-left: 50px;
     max-width: 370px;
+    max-height: 900px;
     background-image: none !important;
   }
 `;
@@ -38,6 +40,7 @@ export const Poster = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @media (max-width: 768px) {
     margin-right: 15px;
   }
@@ -51,10 +54,11 @@ export const Details = styled.div`
   padding: 25px;
   font-family: Roboto, sans-serif;
   color: #ffffff;
+
   @media (max-width: 768px) {
+    height: 100%;
     padding: 0;
     margin: 0;
-    margin-top: -30px;
     text-align: end;
     background: none;
   }
@@ -64,6 +68,7 @@ export const OverView = styled.div`
   font-family: Roboto, sans-serif;
   color: #ffffff;
   font-size: 25px;
+
   @media (max-width: 768px) {
     font-size: 15px;
     min-width: 160px;
@@ -74,6 +79,7 @@ export const Title = styled.h1`
   font-family: Roboto, sans-serif;
   color: #ffffff;
   font-size: 80px;
+
   @media (max-width: 768px) {
     font-size: 28px;
   }

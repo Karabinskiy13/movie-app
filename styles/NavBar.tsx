@@ -13,6 +13,7 @@ export const NavBarStyled = styled.div`
   align-items: center;
   width: 50px;
   height: 700px;
+
   @media (max-width: 768px) {
     margin-left: -5px;
     min-width: 40px;

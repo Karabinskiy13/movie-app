@@ -13,18 +13,18 @@ export type MovieItem = {
 const MovieByGenre = ({ movie }: MovieItem) => {
   const background = movie.backdrop_path
     ? `url(${urls.img1280.concat(movie.backdrop_path)})`
-    : 'none';
+    : 'url(https://images.hdqwalls.com/download/dark-abstract-black-minimal-4k-q0-1280x800.jpg)';
+
+  const poster = movie.poster_path
+    ? `${urls.img1280.concat(movie.poster_path)}`
+    : 'https://png.pngtree.com/png-vector/20190420/ourlarge/pngtree-question-mark-vector-icon-png-image_963326.jpg';
+
   return (
     <Link href={`/movie/${movie.id}`}>
       <MovieStyle style={{ backgroundImage: background }}>
         <AboutMovie>
           <Poster>
-            <Image
-              src={urls.img342.concat(movie.poster_path)}
-              alt={'poster'}
-              width={342}
-              height={513}
-            />
+            <Image src={poster} alt={'poster'} width={342} height={513} />
           </Poster>
           <Details>
             <Title>{movie.title}</Title>

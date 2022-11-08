@@ -8,6 +8,7 @@ export const SearchStyle = styled.input`
   background: #ffffff
   border-radius: 3px;
   border: 1px solid #fff;
+  
   @media (max-width: 768px) {
     max-width: 360px
   }

@@ -14,8 +14,8 @@ const Genres = ({ genres }: Genres) => {
   return (
     <div>
       <GenresStyle>
+        <Heading>Genres</Heading>
         <GenresListStyle>
-          <Heading>Genres</Heading>
           {genres && genres.map((genre) => <GenresItem key={genre.id} genre={genre} />)}
         </GenresListStyle>
       </GenresStyle>

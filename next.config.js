@@ -8,6 +8,18 @@ const nextConfig = {
         hostname: 'image.tmdb.org',
         port: '',
         pathname: '/t/p/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.hdqwalls.com',
+        port: '',
+        pathname: '/download/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'png.pngtree.com',
+        port: '',
+        pathname: '/png-vector/**'
       }
     ]
   },

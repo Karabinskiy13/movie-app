@@ -8,6 +8,7 @@ export const GenresStyle = styled.div`
   flex-direction: column;
   align-content: center;
   align-items: center;
+
   @media (max-width: 768px) {
     max-width: 370px;
     max-height: 720px;
@@ -22,6 +23,7 @@ export const Heading = styled.h1`
   font-size: 40px;
   line-height: 50px;
   color: #ffffff;
+
   @media (max-width: 768px) {
     margin-right: 100px;
     margin-left: 80px;
@@ -56,6 +58,7 @@ export const GenresListStyle = styled.div`
   .a {
     text-decoration: none;
   }
+
   @media (max-width: 768px) {
     gap: 20px;
     margin-top: 0;

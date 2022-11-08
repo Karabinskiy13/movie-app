@@ -15,12 +15,14 @@ import {
 export const Slide = ({ movie }: MovieItem) => {
   const { original_title, overview, id, vote_average, backdrop_path } = movie;
 
+  const background = backdrop_path
+    ? `url(${urls.img1280.concat(backdrop_path)}`
+    : 'url(https://images.hdqwalls.com/download/dark-abstract-black-minimal-4k-q0-1280x800.jpg)';
+
   return (
     <CarouselSlide
       style={{
-        backgroundImage: backdrop_path
-          ? `url(${urls.img1280.concat(backdrop_path)})`
-          : 'url(https://images.hdqwalls.com/download/dark-abstract-black-minimal-4k-q0-1280x800.jpg)'
+        backgroundImage: background
       }}>
       <CarouselInfo>
         <CarouselHeader>{original_title}</CarouselHeader>
