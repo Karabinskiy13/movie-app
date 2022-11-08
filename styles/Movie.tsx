@@ -12,9 +12,8 @@ export const MovieStyle = styled.div`
     color: #ffffff;
   }
   @media (max-width: 768px) {
-    padding-left: 50px;
     max-width: 370px;
-    max-height: 900px;
+    max-height: 1000px;
     background-image: none !important;
   }
 `;
@@ -28,7 +27,7 @@ export const AboutMovie = styled.div`
     display: flex;
     flex-direction: column;
     margin: auto;
-    padding: 30px;
+    min-width: 385px;
   }
   @media (max-width: 320px) {
     padding-left: 70px;
@@ -40,10 +39,6 @@ export const Poster = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (max-width: 768px) {
-    margin-right: 15px;
-  }
 `;
 
 export const Details = styled.div`
@@ -57,7 +52,7 @@ export const Details = styled.div`
 
   @media (max-width: 768px) {
     height: 100%;
-    padding: 0;
+    padding-right: 50px;
     margin: 0;
     text-align: end;
     background: none;
