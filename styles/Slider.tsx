@@ -80,6 +80,8 @@ export const CarouselText = styled.p`
 
   @media (max-width: 768px) {
     margin-left: -40px;
+    font-size: 13px;
+    max-width: 270px;
   }
 `;
 
@@ -99,6 +101,7 @@ export const CarouselButton = styled.button`
   border-radius: 40px;
 
   @media (max-width: 768px) {
-    margin-left: -28px;
+    margin-left: -10px;
+    width: 200px;
   }
 `;
