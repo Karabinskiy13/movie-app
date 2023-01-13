@@ -2,6 +2,7 @@ import React from 'react';
 
 import TopRatedMovie from '../../src/components/TopRatedMovie/TopRatedMovie';
 import { moviesService } from '../../src/services/movies.service';
+
 import { Movie } from '../../types';
 
 type TopMovieProps = {

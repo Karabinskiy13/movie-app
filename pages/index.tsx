@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Slider from 'react-slick';
-import ScrollRight from '../public/images/scrollRight.svg';
+import { ScrollRight } from '../public/images/scrollRight';
 
 import { Slide } from '../src/components/Slide/SlideItem';
 import { moviesService } from '../src/services/movies.service';

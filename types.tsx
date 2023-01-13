@@ -35,6 +35,8 @@ export type Movie = {
   status: string;
 };
 
+export type FavoriteMovie = Partial<Pick<Movie, 'id' | 'poster_path'>>;
+
 export type GenreType = {
   id: number;
   name: string;
