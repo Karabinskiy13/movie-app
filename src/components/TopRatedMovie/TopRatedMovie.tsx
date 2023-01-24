@@ -4,14 +4,14 @@ import Link from 'next/link';
 import React from 'react';
 import { AboutMovie, Details, MovieStyle, OverView, Poster, Title } from '../../../styles/Movie';
 import { Movie } from '../../../types';
-
 import { urls } from '../../constants';
 
 type TopMovie = {
   topMovie: Movie;
+  handle?: () => void;
 };
 
-const TopRatedMovie = ({ topMovie }: TopMovie) => {
+const TopRatedMovie = ({ topMovie, handle }: TopMovie) => {
   const { poster_path, release_date, id, overview, title, backdrop_path } = topMovie;
   const background = backdrop_path
     ? `url(${urls.img1280.concat(backdrop_path)})`
@@ -35,6 +35,7 @@ const TopRatedMovie = ({ topMovie }: TopMovie) => {
             <Details>
               <Title>{title}</Title>
               <h1 className={'releaseDate'}>({release_date && release_date.substring(0, 4)})</h1>
+              <button onClick={() => handle?.()}>ADD TO FAVORITES</button>
               <OverView>{overview}</OverView>
             </Details>
           </AboutMovie>

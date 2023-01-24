@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import TopRatedMovie from '../../src/components/TopRatedMovie/TopRatedMovie';
+import { FavoritesContext } from '../../src/context/favoritesContext';
 import { moviesService } from '../../src/services/movies.service';
 import { Movie } from '../../types';
 
@@ -9,10 +10,18 @@ type TopMovieProps = {
 };
 
 const TopRated = ({ topMovie }: TopMovieProps) => {
+  const { favorites, addToFavorites, removeFromFavorites } = useContext(FavoritesContext);
+  console.log(favorites);
   return (
     <div>
       {topMovie &&
-        topMovie.map((topMovie) => <TopRatedMovie key={topMovie.id} topMovie={topMovie} />)}
+        topMovie.map((topMovie) => (
+          <TopRatedMovie
+            key={topMovie.id}
+            topMovie={topMovie}
+            handle={() => addToFavorites({ topMovie })}
+          />
+        ))}
     </div>
   );
 };
