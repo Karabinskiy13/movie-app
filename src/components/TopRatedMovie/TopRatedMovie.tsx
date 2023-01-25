@@ -2,23 +2,27 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToFavorites, selectFavoritesState } from '../../store/favoritesSlice';
-import { AboutMovie, Details, MovieStyle, OverView, Poster, Title } from '../../../styles/Movie';
+import {
+  AboutMovie,
+  Details,
+  Favorites,
+  FavoritesButton,
+  MovieStyle,
+  OverView,
+  Poster,
+  Title
+} from '../../../styles/Movie';
+
 import { Movie } from '../../../types';
 
 import { urls } from '../../constants';
 
 type TopMovie = {
   topMovie: Movie;
-  remove?: any;
+  handle?: () => void;
 };
 
-const TopRatedMovie = ({ topMovie }: TopMovie) => {
-  const dispatch = useDispatch();
-  const handle = (id: any) => {
-    dispatch(addToFavorites(id));
-  };
+const TopRatedMovie = ({ topMovie, handle }: TopMovie) => {
   const { poster_path, release_date, id, overview, title, backdrop_path } = topMovie;
   const background = backdrop_path
     ? `url(${urls.img1280.concat(backdrop_path)})`
@@ -30,11 +34,11 @@ const TopRatedMovie = ({ topMovie }: TopMovie) => {
 
   return (
     <div>
-      <Link href={`/movie/${id}`} style={{ textDecoration: 'none' }}>
-        <MovieStyle
-          style={{
-            backgroundImage: background
-          }}>
+      <MovieStyle
+        style={{
+          backgroundImage: background
+        }}>
+        <Link href={`/movie/${id}`} style={{ textDecoration: 'none' }}>
           <AboutMovie>
             <Poster>
               <Image src={poster} alt={'poster'} width={342} height={513} />
@@ -43,13 +47,13 @@ const TopRatedMovie = ({ topMovie }: TopMovie) => {
               <Title>{title}</Title>
               <h1 className={'releaseDate'}>({release_date && release_date.substring(0, 4)})</h1>
               <OverView>{overview}</OverView>
-              <button style={{ width: '100%' }} onClick={() => handle(id)}>
-                Add to Favorite
-              </button>
             </Details>
           </AboutMovie>
-        </MovieStyle>
-      </Link>
+        </Link>
+        <Favorites>
+          <FavoritesButton onClick={() => handle?.()}>Add to Favorites</FavoritesButton>
+        </Favorites>
+      </MovieStyle>
     </div>
   );
 };

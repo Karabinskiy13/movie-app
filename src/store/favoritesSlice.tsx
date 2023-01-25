@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { AppState } from './store';
+
 import { HYDRATE } from 'next-redux-wrapper';
 import { Movie } from '../../types';
 
@@ -35,7 +35,6 @@ export const favoritesSlice = createSlice({
 });
 
 export const { addToFavorites, removeFromFavorites } = favoritesSlice.actions;
+const favoritesReducer = favoritesSlice.reducer;
 
-export const selectFavoritesState = (state: AppState) => state.favorites;
-
-export default favoritesSlice.reducer;
+export default favoritesReducer;
