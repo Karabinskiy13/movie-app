@@ -1,10 +1,9 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import TopRatedMovie from '../../src/components/TopRatedMovie/TopRatedMovie';
 import { moviesService } from '../../src/services/movies.service';
 import { addToFavorites } from '../../src/store/favoritesSlice';
-import { RootState } from '../../src/store/store';
 
 import { Movie } from '../../types';
 
@@ -17,8 +16,6 @@ const TopRated = ({ topMovie }: TopMovieProps) => {
   const addFavorites = (topMovie: Movie) => {
     dispatch(addToFavorites(topMovie));
   };
-  const { favorites } = useSelector((state: RootState) => state.favoritesReducer);
-  console.log(favorites);
   return (
     <div>
       {topMovie &&

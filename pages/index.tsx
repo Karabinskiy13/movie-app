@@ -9,6 +9,8 @@ import { Movie } from '../types';
 import { CarouselStyled } from '../styles/Slider';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { addToFavorites } from '../src/store/favoritesSlice';
+import { useDispatch } from 'react-redux';
 
 type SliderType = {
   nowPlayingMovies: Movie[];
@@ -20,6 +22,11 @@ type Arrow = {
 };
 
 const HomeSlider = ({ nowPlayingMovies }: SliderType) => {
+  const dispatch = useDispatch();
+  const addFavorites = (topMovie: Movie) => {
+    dispatch(addToFavorites(topMovie));
+  };
+
   const SampleNextArrow = ({ className, style, onClick }: Arrow) => {
     return (
       <ScrollRight
@@ -47,7 +54,11 @@ const HomeSlider = ({ nowPlayingMovies }: SliderType) => {
     <CarouselStyled className="carousel">
       <Slider {...settings}>
         {nowPlayingMovies &&
-          nowPlayingMovies.slice(9, 13).map((movie) => <Slide key={movie.id} movie={movie} />)}
+          nowPlayingMovies
+            .slice(9, 13)
+            .map((movie) => (
+              <Slide key={movie.id} movie={movie} handle={() => addFavorites(movie)} />
+            ))}
       </Slider>
     </CarouselStyled>
   );

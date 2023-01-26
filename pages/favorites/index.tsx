@@ -1,9 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import FavoriteFilm from '../../src/components/Favorites/Favorites';
 
-import TopRatedMovie from '../../src/components/TopRatedMovie/TopRatedMovie';
 import { removeFromFavorites } from '../../src/store/favoritesSlice';
 import { RootState } from '../../src/store/store';
+import { FavoritesWrapper } from '../../styles/Favorites';
 
 const Favorites = () => {
   const dispatch = useDispatch();
@@ -14,16 +15,16 @@ const Favorites = () => {
   const { favorites } = useSelector((state: RootState) => state.favoritesReducer);
   console.log(favorites);
   return (
-    <div>
+    <FavoritesWrapper>
       {favorites &&
         favorites.map((favorite) => (
-          <TopRatedMovie
+          <FavoriteFilm
             key={favorite.id}
-            topMovie={favorite}
+            favoriteFilm={favorite}
             handle={() => removeFavorites(favorite.id)}
           />
         ))}
-    </div>
+    </FavoritesWrapper>
   );
 };
 export default Favorites;

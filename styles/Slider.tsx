@@ -105,3 +105,7 @@ export const CarouselButton = styled.button`
     width: 200px;
   }
 `;
+
+export const CarouselButtonList = styled.div`
+  display: flex;
+`;

@@ -5,7 +5,7 @@ import React from 'react';
 import {
   AboutMovie,
   Details,
-  Favorites,
+  FavoritesMovie,
   FavoritesButton,
   MovieStyle,
   OverView,
@@ -50,9 +50,9 @@ const TopRatedMovie = ({ topMovie, handle }: TopMovie) => {
             </Details>
           </AboutMovie>
         </Link>
-        <Favorites>
+        <FavoritesMovie>
           <FavoritesButton onClick={() => handle?.()}>Add to Favorites</FavoritesButton>
-        </Favorites>
+        </FavoritesMovie>
       </MovieStyle>
     </div>
   );

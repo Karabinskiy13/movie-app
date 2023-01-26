@@ -132,8 +132,8 @@ export const FavoritesButton = styled.button`
   }
 `;
 
-export const Favorites = styled.div`
+export const FavoritesMovie = styled.div`
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: center;
 `;
