@@ -6,6 +6,7 @@ import Layout from '../src/components/Layout/Layout';
 import Head from 'next/head';
 import { persistor, wrapper } from '../src/store/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import '../firebase';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <PersistGate loading={null} persistor={persistor}>

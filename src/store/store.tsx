@@ -12,6 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import favoritesReducer from './favoritesSlice';
 import { createWrapper } from 'next-redux-wrapper';
+import userReducer from './authSlice';
 
 const persistConfig = {
   key: 'root',
@@ -19,7 +20,7 @@ const persistConfig = {
   storage
 };
 
-const rootReducer = combineReducers({ favoritesReducer });
+const rootReducer = combineReducers({ favoritesReducer, userReducer });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

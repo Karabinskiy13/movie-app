@@ -8,12 +8,13 @@ import { FavoritesWrapper } from '../../styles/Favorites';
 
 const Favorites = () => {
   const dispatch = useDispatch();
+
   const removeFavorites = (id: number) => {
     dispatch(removeFromFavorites(id));
   };
 
   const { favorites } = useSelector((state: RootState) => state.favoritesReducer);
-  console.log(favorites);
+
   return (
     <FavoritesWrapper>
       {favorites &&
