@@ -14,8 +14,6 @@ const Login = () => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        console.log(user);
-        console.log(user.email);
         dispatch(
           setUser({
             email: user.email,
