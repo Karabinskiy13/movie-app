@@ -6,6 +6,7 @@ import Search from '../../../public/images/search.svg';
 import Movie from '../../../public/images/Movie.svg';
 import Home from '../../../public/images/home.svg';
 import Favourite from '../../../public/images/favourite.svg';
+import AddToFavorites from '../../../public/images/addtofavorites.svg';
 import { NavBarStyled, Icons } from '../../../styles/NavBar';
 
 const NavBar = () => {
@@ -29,6 +30,11 @@ const NavBar = () => {
       <Link href={'/top_rated'}>
         <Icons>
           <Favourite />
+        </Icons>
+      </Link>
+      <Link href={'/favorites'}>
+        <Icons>
+          <AddToFavorites />
         </Icons>
       </Link>
     </NavBarStyled>

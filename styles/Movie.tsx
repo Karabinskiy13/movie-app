@@ -112,3 +112,28 @@ export const Money = styled.div`
   gap: 15px;
   align-items: center;
 `;
+
+export const FavoritesButton = styled.button`
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  text-shadow: 0px 40px 40px rgba(0, 0, 0, 0.12);
+  width: 100px;
+  margin-top: -20px;
+  box-shadow: 0px 16px 16px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 40px;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    margin-left: -10px;
+    width: 200px;
+  }
+`;
+
+export const FavoritesMovie = styled.div`
+  display: flex;
+  align-items: end;
+  justify-content: center;
+`;

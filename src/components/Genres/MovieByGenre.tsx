@@ -2,15 +2,25 @@
 import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
-import { AboutMovie, Details, MovieStyle, OverView, Poster, Title } from '../../../styles/Movie';
+import {
+  AboutMovie,
+  Details,
+  FavoritesMovie,
+  FavoritesButton,
+  MovieStyle,
+  OverView,
+  Poster,
+  Title
+} from '../../../styles/Movie';
 import { Movie } from '../../../types';
 import { urls } from '../../constants';
 
 export type MovieItem = {
   movie: Movie;
+  handle?: () => void;
 };
 
-const MovieByGenre = ({ movie }: MovieItem) => {
+const MovieByGenre = ({ movie, handle }: MovieItem) => {
   const background = movie.backdrop_path
     ? `url(${urls.img1280.concat(movie.backdrop_path)})`
     : 'url(https://images.hdqwalls.com/download/dark-abstract-black-minimal-4k-q0-1280x800.jpg)';
@@ -32,6 +42,9 @@ const MovieByGenre = ({ movie }: MovieItem) => {
             <OverView>{movie.overview}</OverView>
           </Details>
         </AboutMovie>
+        <FavoritesMovie>
+          <FavoritesButton onClick={() => handle?.()}>Add to Favorites</FavoritesButton>
+        </FavoritesMovie>
       </MovieStyle>
     </Link>
   );

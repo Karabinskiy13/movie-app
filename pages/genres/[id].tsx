@@ -5,6 +5,8 @@ import MovieByGenre from '../../src/components/Genres/MovieByGenre';
 import { genreService } from '../../src/services/genres.service';
 import { Movie } from '../../types';
 import { ParsedUrlQuery } from 'querystring';
+import { addToFavorites } from '../../src/store/favoritesSlice';
+import { useDispatch } from 'react-redux';
 
 type MoviesByGenre = {
   moviesByGenre: Movie[];
@@ -14,9 +16,16 @@ interface Params extends ParsedUrlQuery {
 }
 
 const MoviesByGenre = ({ moviesByGenre }: MoviesByGenre) => {
+  const dispatch = useDispatch();
+  const addFavorites = (topMovie: Movie) => {
+    dispatch(addToFavorites(topMovie));
+  };
   return (
     <div>
-      {moviesByGenre && moviesByGenre.map((movie) => <MovieByGenre key={movie.id} movie={movie} />)}
+      {moviesByGenre &&
+        moviesByGenre.map((movie) => (
+          <MovieByGenre key={movie.id} movie={movie} handle={() => addFavorites(movie)} />
+        ))}
     </div>
   );
 };

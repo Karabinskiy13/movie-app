@@ -3,16 +3,23 @@ import Link from 'next/link';
 import StarRatings from 'react-star-ratings';
 
 import { urls } from '../../constants';
-import { MovieItem } from '../Genres/MovieByGenre';
 import {
   CarouselButton,
+  CarouselButtonList,
   CarouselHeader,
   CarouselInfo,
   CarouselSlide,
   CarouselText
 } from '../../../styles/Slider';
+import { FavoritesMovie, FavoritesButton } from '../../../styles/Movie';
+import { Movie } from '../../../types';
 
-export const Slide = ({ movie }: MovieItem) => {
+export type SlideProps = {
+  movie: Movie;
+  handle?: () => void;
+};
+
+export const Slide = ({ movie, handle }: SlideProps) => {
   const { original_title, overview, id, vote_average, backdrop_path } = movie;
 
   const background = backdrop_path
@@ -37,9 +44,14 @@ export const Slide = ({ movie }: MovieItem) => {
           />
         </div>
         <CarouselText>{overview}</CarouselText>
-        <Link href={`/movie/${id}`}>
-          <CarouselButton>More Details</CarouselButton>
-        </Link>
+        <CarouselButtonList>
+          <Link href={`/movie/${id}`}>
+            <CarouselButton>More Details</CarouselButton>
+          </Link>
+          <FavoritesMovie>
+            <FavoritesButton onClick={() => handle?.()}>Add to Favorites</FavoritesButton>
+          </FavoritesMovie>
+        </CarouselButtonList>
       </CarouselInfo>
     </CarouselSlide>
   );
